@@ -1,24 +1,14 @@
-import 'p2';
-import 'pixi';
-import 'phaser';
+import { Game, IGameConfig, AUTO } from 'phaser';
 
 import * as WebFontLoader from 'webfontloader';
-
-import Boot from './states/boot';
-import Preloader from './states/preloader';
-import Title from './states/title';
 import * as Utils from './utils/utils';
 import * as Assets from './assets';
 
-class App extends Phaser.Game {
-  constructor(config: Phaser.IGameConfig) {
+class App extends Game {
+  constructor(config: IGameConfig) {
     super(config);
 
-    this.state.add('boot', Boot);
-    this.state.add('preloader', Preloader);
-    this.state.add('title', Title);
-
-    this.state.start('boot');
+    console.log('this', this);
   }
 }
 
@@ -39,12 +29,22 @@ function startApp(): void {
   }
 
   // There are a few more options you can set if needed, just take a look at Phaser.IGameConfig
-  let gameConfig: Phaser.IGameConfig = {
+  let gameConfig: IGameConfig = {
     width: gameWidth,
     height: gameHeight,
-    renderer: Phaser.AUTO,
+    type: AUTO,
     parent: '',
-    resolution: 1
+    resolution: 1,
+    physics: {
+      default: 'arcade',
+      arcade: {
+        gravity: { y: 200 }
+      }
+    }
+    // scene: {
+    //   preload: preload,
+    //   create: create
+    // }
   };
 
   let app = new App(gameConfig);

@@ -15,12 +15,12 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.js'],
     alias: {
-      pixi: path.join(__dirname, 'node_modules/phaser-ce/build/custom/pixi.js'),
-      phaser: path.join(
-        __dirname,
-        'node_modules/phaser-ce/build/custom/phaser-split.js'
-      ),
-      p2: path.join(__dirname, 'node_modules/phaser-ce/build/custom/p2.js'),
+      // pixi: path.join(__dirname, 'node_modules/phaser-ce/build/custom/pixi.js'),
+      // phaser: path.join(
+      //   __dirname,
+      //   'node_modules/phaser-ce/build/custom/phaser-split.js'
+      // ),
+      // p2: path.join(__dirname, 'node_modules/phaser-ce/build/custom/p2.js'),
       assets: path.join(__dirname, 'assets/')
     }
   },
@@ -45,10 +45,7 @@ module.exports = {
       ),
 
       // The items below most likely the ones you should be modifying
-      GOOGLE_WEB_FONTS: JSON.stringify([
-        // Add or remove entries in this array to change which fonts are loaded
-        'Barrio'
-      ]),
+      GOOGLE_WEB_FONTS: JSON.stringify([]),
       SOUND_EXTENSIONS_PREFERENCE: JSON.stringify([
         // Re-order the items in this array to change the desired order of checking your audio sources (do not add/remove/modify the entries themselves)
         'webm',
